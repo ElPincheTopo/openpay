@@ -163,8 +163,11 @@ func (m *Merchant) DeleteCustomer(id string) error {
 	return m.performCustomerOperation("DELETE", id, nil, nil)
 }
 
-func (c *Customer) ChargeCustomer(data, dst interface{}) error {
-	return c.Merchant.performCustomerOperation("POST", fmt.Sprintf("%s/charges", c.ID), data, dst)
+func (c *Customer) ChargeCustomer(data interface{}) (*Charge, error) {
+	var dst Charge
+
+	err := c.Merchant.performCustomerOperation("POST", fmt.Sprintf("%s/charges", c.ID), data, &dst)
+	return &dst, err
 }
 
 func (m *Merchant) performCustomerOperation(verb, id string, data, dst interface{}) error {
