@@ -35,5 +35,20 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
+	var dst openpay.Charge
+	err = customer.ChargeCustomer(&openpay.ChargeArgs{
+		Source_id:         "aCardToken",
+		Method:            "card",
+		Amount:            100.50,
+		Currency:          "MXN",
+		Description:       "Cargo inicial a mi cuenta",
+		Order_id:          "oid-00051",
+		Device_session_id: "aSessionID",
+	}, &dst)
+
+	if err != nil {
+		panic(err)
+	}
 }
 ```
