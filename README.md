@@ -1,6 +1,6 @@
 # Openpay Go API Wrapper
 
-[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](https://godoc.org/github.com/mazingstudio/openpay)
+[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](https://godoc.org/github.com/ElPincheTopo/openpay)
 
 Este package es un wrapper de la API de Openpay.
 
@@ -10,7 +10,7 @@ Para interactuar con la API de Openpay se debe crear una instancia de `Merchant`
 
 ```go
 import (
-	"github.com/mazingstudio/openpay"
+	"github.com/ElPincheTopo/openpay"
 )
 
 func main() {
